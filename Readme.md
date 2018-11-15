@@ -1,3 +1,9 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [ContentPageWithTextBox.aspx](./CS/WebSite/ContentPageWithTextBox.aspx) (VB: [ContentPageWithTextBox.aspx](./VB/WebSite/ContentPageWithTextBox.aspx))
+* [Default.aspx](./CS/WebSite/Default.aspx) (VB: [Default.aspx](./VB/WebSite/Default.aspx))
+<!-- default file list end -->
 # How to manipulate client-side objects within a ASPxPopupControl with the specified ContentUrl
 
 
