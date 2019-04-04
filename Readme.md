@@ -2,8 +2,8 @@
 *Files to look at*:
 
 * [ContentPageWithTextBox.aspx](./CS/ContentPageWithTextBox.aspx) (VB: [ContentPageWithTextBox.aspx](./VB/ContentPageWithTextBox.aspx))
-* [ContentPageWithTextBox.aspx.cs](./CS/ContentPageWithTextBox.aspx.cs) (VB: [ContentPageWithTextBox.aspx](./VB/ContentPageWithTextBox.aspx))
-* [Default.aspx](./CS/Default.aspx) (VB: [Default.aspx.vb](./VB/Default.aspx.vb))
+* [ContentPageWithTextBox.aspx.cs](./CS/ContentPageWithTextBox.aspx.cs) (VB: [ContentPageWithTextBox.aspx.vb](./VB/ContentPageWithTextBox.aspx.vb))
+* [Default.aspx](./CS/Default.aspx) (VB: [Default.aspx](./VB/Default.aspx))
 * [Default.aspx.cs](./CS/Default.aspx.cs) (VB: [Default.aspx.vb](./VB/Default.aspx.vb))
 <!-- default file list end -->
 # How to manipulate client-side objects within a ASPxPopupControl with the specified ContentUrl
