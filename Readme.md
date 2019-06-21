@@ -7,6 +7,9 @@
 * [Default.aspx.cs](./CS/Default.aspx.cs) (VB: [Default.aspx.vb](./VB/Default.aspx.vb))
 <!-- default file list end -->
 # How to manipulate client-side objects within a ASPxPopupControl with the specified ContentUrl
+<!-- run online -->
+**[[Run Online]](https://codecentral.devexpress.com/e3928/)**
+<!-- run online end -->
 
 
 <p>This example demonstrates how to manipulate objects inside <strong>ASPxPopupControl</strong> with a specified <strong>ContentUrl</strong> property.<br> To access/manipulate client-side programmatic objects inside a <strong>ASPxPopupControl</strong> perform the following steps:<br>1) Call the <strong>ASPxPopupControl.Show</strong> method and handle the <strong>ASPxPopupControl's Shown </strong>event (this is necessary because the DOM tree for <strong>ASPxPopupControl</strong> has not been built yet, and that's why we can't get references to objects inside the <strong>ASPxPopupControl</strong> until it is shown); </p>
