@@ -1,46 +1,30 @@
-<!-- default badges list -->
-![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/128564743/15.1.3%2B)
-[![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/E3928)
-[![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
-<!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
-
-* [ContentPageWithTextBox.aspx](./CS/ContentPageWithTextBox.aspx) (VB: [ContentPageWithTextBox.aspx](./VB/ContentPageWithTextBox.aspx))
-* [ContentPageWithTextBox.aspx.cs](./CS/ContentPageWithTextBox.aspx.cs) (VB: [ContentPageWithTextBox.aspx.vb](./VB/ContentPageWithTextBox.aspx.vb))
-* [Default.aspx](./CS/Default.aspx) (VB: [Default.aspx](./VB/Default.aspx))
-* [Default.aspx.cs](./CS/Default.aspx.cs) (VB: [Default.aspx.vb](./VB/Default.aspx.vb))
-<!-- default file list end -->
-# How to manipulate client-side objects within a ASPxPopupControl with the specified ContentUrl
+# Popup Control for ASP.NET Web Forms - How to manage client-side objects within the control's content page
 <!-- run online -->
 **[[Run Online]](https://codecentral.devexpress.com/e3928/)**
 <!-- run online end -->
 
+This example demonstrates how to add objects to the popup control's content page and use the `GetWindowContentIFrame` method to manage those objects.
 
-<p>This example demonstrates how to manipulate objects inside <strong>ASPxPopupControl</strong> with a specified <strong>ContentUrl</strong> property.<br> To access/manipulate client-side programmatic objects inside a <strong>ASPxPopupControl</strong> perform the following steps:<br>1) Call the <strong>ASPxPopupControl.Show</strong> method and handle the <strong>ASPxPopupControl's Shown </strong>event (this is necessary because the DOM tree for <strong>ASPxPopupControl</strong> has not been built yet, and that's why we can't get references to objects inside the <strong>ASPxPopupControl</strong> until it is shown); </p>
-<p>2) Get the contentWindow object of the <strong>ASPxPopupControl </strong>IFrame via the <a href="http://documentation.devexpress.com/#AspNet/DevExpressWebASPxPopupControlScriptsASPxClientPopupControl_GetWindowContentIFrametopic"><u>ASPxClientPopupControl.GetWindowContentIFrame</u></a> method;<br> 3) Get any object from this window and manipulate it.<br><br></p>
-<p><strong>Note:</strong> Iframe isn't fully loaded in the <strong>Shown</strong> event when the popup is shown for the first time. It is necessary to handle the <strong>load</strong> event of iframe and call the necessary functions in the event handler.</p>
-<p><strong>Default.aspx:</strong></p>
+## Overview
+
+The main idea is to handle the control's client-side `Shown` event to access the objects within the control's content page specified by the [ContentUrl](https://docs.devexpress.com/AspNet/DevExpress.Web.PopupWindow.ContentUrl) property. Then call the popup control's [GetWindowContentIFrame](https://docs.devexpress.com/AspNet/js-ASPxClientPopupControl.GetWindowContentIFrame(window)) method to get the control's IFrame that contains the content page.
 
 
 ```aspx
 <dx:ASPxLoadingPanel ID="ASPxLoadingPanel1" ClientInstanceName="loadingPanel" Modal="true" runat="server"></dx:ASPxLoadingPanel>
 <dx:ASPxComboBox ID="cmb" runat="server" ClientInstanceName="clientCmb">
-   <Items>
-       ...
-   </Items>
-   <ClientSideEvents SelectedIndexChanged="OnSelectedIndexChanged" />
+    <Items>
+        <!-- ... -->
+    </Items>
+    <ClientSideEvents SelectedIndexChanged="OnSelectedIndexChanged" />
 </dx:ASPxComboBox>
 
 <dx:ASPxPopupControl ID="popup" runat="server" ContentUrl="~/ContentPageWithTextBox.aspx"
 Top="100" ClientInstanceName="clientPopup" CloseAction="CloseButton">
-   <ClientSideEvents Shown="OnShown" />
+    <ClientSideEvents Shown="OnShown" />
 </dx:ASPxPopupControl> 
 
 ```
-
-
-
 
 ```js
 var iframeLoaded = false;
@@ -72,19 +56,11 @@ function SetTbText() {
 }
 ```
 
+## Files to Review
 
-<p><strong>ContentPageWithTextBox.aspx:<br> </strong></p>
+* [ContentPageWithTextBox.aspx](./CS/ContentPageWithTextBox.aspx) (VB: [ContentPageWithTextBox.aspx](./VB/ContentPageWithTextBox.aspx))
+* [Default.aspx](./CS/Default.aspx) (VB: [Default.aspx](./VB/Default.aspx))
 
+## More Examples
 
-```aspx
-<dx:ASPxTextBox ID="tb" runat="server" Width="150px" ClientInstanceName="clientTb">
-</dx:ASPxTextBox>
-
-```
-
-
-<p><strong>See Also:</strong><br> <a href="https://www.devexpress.com/Support/Center/p/E3098">E3098: How to return values from the ASPxPopupControl's ContentUrl page and close the popup on both client and server sides </a></p>
-
-<br/>
-
-
+* [Popup Control for ASP.NET Web Forms - How to return values from the content page and close the pop-up window on the client or server](https://github.com/DevExpress-Examples/asp-net-web-forms-popup-control-get-value-from-content-page-and-close-popup)
