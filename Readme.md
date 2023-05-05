@@ -5,7 +5,7 @@
 <!-- default badges end -->
 # Popup Control for ASP.NET Web Forms - How to manage client-side objects within the control's content page
 <!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/e3928/)**
+**[[Run Online]](https://codecentral.devexpress.com/128564743/)**
 <!-- run online end -->
 
 This example demonstrates how to add objects to the popup control's content page and use the `GetWindowContentIFrame` method to manage those objects.
